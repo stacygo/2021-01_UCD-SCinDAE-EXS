@@ -15,4 +15,3 @@ for tweet in sentiment_analysis:
 
     # Complete format to print out the results
     print("Positive comments found {}".format(positive_matches))
-

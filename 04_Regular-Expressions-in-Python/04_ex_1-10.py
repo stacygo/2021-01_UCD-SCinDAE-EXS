@@ -18,3 +18,4 @@ for movie in movies:
     else:
         # Replace three occurrences by one
         print(movie.replace("actor actor actor", "actor"))
+

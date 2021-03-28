@@ -21,5 +21,3 @@ for tweet in sentiment_analysis:
         print("Elongated word found: {word}".format(word=elongated_word))
     else:
         print("No elongated word found")
-
-

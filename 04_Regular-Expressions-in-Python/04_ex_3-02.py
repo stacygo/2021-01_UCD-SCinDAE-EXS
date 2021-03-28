@@ -10,4 +10,3 @@ regex = r"@robot\d\W"
 
 # Find all matches of regex
 print(re.findall(regex, sentiment_analysis))
-
