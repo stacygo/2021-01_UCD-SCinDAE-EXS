@@ -1,5 +1,6 @@
 # Exercise 2-08: The keyword nonlocal and nested functions
 
+
 # Define echo_shout()
 def echo_shout(word):
     """Change the value of a nonlocal variable"""

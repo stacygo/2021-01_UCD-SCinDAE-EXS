@@ -1,5 +1,6 @@
 # Exercise 1-04: Write a simple function
 
+
 # Define the function shout
 def shout():
     """Print a string with three exclamation marks"""
@@ -8,6 +9,7 @@ def shout():
 
     # Print shout_word
     print(shout_word)
+
 
 # Call shout
 shout()

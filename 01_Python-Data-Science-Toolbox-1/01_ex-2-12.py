@@ -1,5 +1,6 @@
 # Exercise 2-12: Functions with variable-length arguments (*args)
 
+
 # Define gibberish
 def gibberish(*args):
     """Concatenate strings in *args together."""
@@ -13,6 +14,7 @@ def gibberish(*args):
 
     # Return hodgepodge
     return hodgepodge
+
 
 # Call gibberish() with one string: one_word
 one_word = gibberish("luke")

@@ -1,5 +1,6 @@
 # Exercise #3-10: Error handling by raising an error
 
+
 # Define shout_echo
 def shout_echo(word1, echo=1):
     """Concatenate echo copies of word1 and three

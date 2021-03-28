@@ -1,5 +1,6 @@
 # Exercise 1-06: Functions that return single values
 
+
 # Define shout with the parameter, word
 def shout(word):
     """Return a string with three exclamation marks"""
@@ -8,6 +9,7 @@ def shout(word):
 
     # Replace print with return
     return shout_word
+
 
 # Pass 'congratulations' to shout: yell
 yell = shout('congratulations')

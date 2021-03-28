@@ -1,5 +1,6 @@
 # Exercise 2-10: Functions with one default argument
 
+
 # Define shout_echo
 def shout_echo(word1, echo=1):
     """Concatenate echo copies of word1 and three
@@ -13,6 +14,7 @@ def shout_echo(word1, echo=1):
 
     # Return shout_word
     return shout_word
+
 
 # Call shout_echo() with "Hey": no_echo
 no_echo = shout_echo('Hey')

@@ -1,5 +1,6 @@
 # Exercise 2-13: Functions with variable-length keyword arguments (**kwargs)
 
+
 # Define report_status
 def report_status(**kwargs):
     """Print out the status of a movie character."""
@@ -12,6 +13,7 @@ def report_status(**kwargs):
         print(key + ": " + value)
 
     print("\nEND REPORT")
+
 
 # First call to report_status()
 report_status(name="luke", affiliation="jedi", status="missing")

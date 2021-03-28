@@ -1,5 +1,6 @@
 # Exercise 1-4: Functions with multiple parameters
 
+
 # Define shout with parameters word1 and word2
 def shout(word1, word2):
     """Concatenate strings with three exclamation marks"""

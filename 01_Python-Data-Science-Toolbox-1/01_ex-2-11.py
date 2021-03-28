@@ -1,5 +1,6 @@
 # Exercise 2-11: Functions with multiple default arguments
 
+
 # Define shout_echo
 def shout_echo(word1, echo=1, intense=False):
     """Concatenate echo copies of word1 and three

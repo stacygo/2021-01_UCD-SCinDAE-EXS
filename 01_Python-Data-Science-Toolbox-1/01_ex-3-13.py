@@ -1,7 +1,8 @@
 # Exercise 3-13: Bringing it all together (2)
 
 import pandas as pd
-tweets_df = pd.read_csv('tweets.csv')
+tweets_df = pd.read_csv('input/tweets.csv')
+
 
 # Define count_entries()
 def count_entries(df, col_name='lang'):
@@ -32,6 +33,7 @@ def count_entries(df, col_name='lang'):
     # Add except block
     except:
         'The DataFrame does not have a ' + col_name + ' column.'
+
 
 # Call count_entries(): result1
 result1 = count_entries(tweets_df, 'lang')

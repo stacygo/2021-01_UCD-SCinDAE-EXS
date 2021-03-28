@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Import Twitter data as DataFrame: df
-df = pd.read_csv('tweets.csv')
+df = pd.read_csv('input/tweets.csv')
 
 # Initialize an empty dictionary: langs_count
 langs_count = {}

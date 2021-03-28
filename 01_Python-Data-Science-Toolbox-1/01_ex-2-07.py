@@ -1,5 +1,6 @@
 # Exercise 2-07: Nested Functions II
 
+
 # Define echo
 def echo(n):
     """Return the inner_echo function."""
@@ -12,6 +13,7 @@ def echo(n):
 
     # Return inner_echo
     return inner_echo
+
 
 # Call echo: twice
 twice = echo(2)

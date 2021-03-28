@@ -1,7 +1,7 @@
 # Exercise 3-12: Bringing it all together (1)
 
 import pandas as pd
-tweets_df = pd.read_csv('tweets.csv')
+tweets_df = pd.read_csv('input/tweets.csv')
 
 # Select retweets from the Twitter DataFrame: result
 result = filter(lambda x: x[0:2] == 'RT', tweets_df['text'])

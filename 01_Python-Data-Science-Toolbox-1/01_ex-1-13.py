@@ -1,6 +1,9 @@
 # Exercise 1-13: Bringing it all together (2)
 
-tweets_df = pd.read_csv('tweets.csv')
+import pandas as pd
+
+tweets_df = pd.read_csv('input/tweets.csv')
+
 
 # Define count_entries()
 def count_entries(df, col_name):
