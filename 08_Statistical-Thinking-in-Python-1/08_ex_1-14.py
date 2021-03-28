@@ -1,21 +1,7 @@
 # Exercise 1-14: Comparison of ECDFs
 
-import numpy as np
 import matplotlib.pyplot as plt
-
-
-def ecdf(data):
-    """Compute ECDF for a one-dimensional array of measurements."""
-    # Number of data points: n
-    n = len(data)
-
-    # x-data for the ECDF: x
-    x = np.sort(data)
-
-    # y-data for the ECDF: y
-    y = np.arange(1, n+1) / n
-
-    return x, y
+import functions
 
 
 setosa_petal_length = [1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.6, 1.4, 1.1, 1.2,
@@ -34,9 +20,9 @@ virginica_petal_length = [6., 5.1, 5.9, 5.6, 5.8, 6.6, 4.5, 6.3, 5.8, 6.1, 5.1, 
                           5.2, 5., 5.2, 5.4, 5.1]
 
 # Compute ECDFs
-x_set, y_set = ecdf(setosa_petal_length)
-x_vers, y_vers = ecdf(versicolor_petal_length)
-x_virg, y_virg = ecdf(virginica_petal_length)
+x_set, y_set = functions.ecdf(setosa_petal_length)
+x_vers, y_vers = functions.ecdf(versicolor_petal_length)
+x_virg, y_virg = functions.ecdf(virginica_petal_length)
 
 # Plot all ECDFs on the same plot
 plt.plot(x_set, y_set, marker='.', linestyle='none')
