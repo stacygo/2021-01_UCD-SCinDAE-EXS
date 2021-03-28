@@ -2,7 +2,7 @@
 
 # The pandas package has been imported as pd and the file 'tweets.csv' has been imported as the df DataFrame for your use
 import pandas as pd
-df = pd.read_csv('tweets.csv')
+df = pd.read_csv('input/tweets.csv')
 
 # Extract the created_at column from df: tweet_time
 tweet_time = df['created_at']

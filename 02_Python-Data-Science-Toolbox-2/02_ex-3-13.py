@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Code from previous exercise
-urb_pop_reader = pd.read_csv('ind_pop_data.csv', chunksize=1000)
+urb_pop_reader = pd.read_csv('input/world_ind_pop_data.csv', chunksize=1000)
 df_urb_pop = next(urb_pop_reader)
 df_pop_ceb = df_urb_pop[df_urb_pop['CountryCode'] == 'CEB']
 pops = zip(df_pop_ceb['Total Population'],

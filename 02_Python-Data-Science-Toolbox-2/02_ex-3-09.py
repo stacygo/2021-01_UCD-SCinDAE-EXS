@@ -1,5 +1,6 @@
 # Exercise 3-09: Writing a generator to load data in chunks (3)
 
+
 # The generator function read_large_file() and the csv file 'world_dev_ind.csv' are preloaded and ready for your use
 def read_large_file(file_object):
     """A generator function to read a large file lazily."""
@@ -17,11 +18,12 @@ def read_large_file(file_object):
         # Yield the line of data
         yield data
 
+
 # Initialize an empty dictionary: counts_dict
 counts_dict = {}
 
 # Open a connection to the file
-with open('world_dev_ind.csv') as file:
+with open('input/world_ind_pop_data.csv') as file:
 
     # Iterate over the generator from read_large_file()
     for line in read_large_file(file):

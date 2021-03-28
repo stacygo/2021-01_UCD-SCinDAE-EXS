@@ -1,5 +1,6 @@
 # Exercise 3-08: Writing a generator to load data in chunks (2)
 
+
 # Define read_large_file()
 def read_large_file(file_object):
     """A generator function to read a large file lazily."""
@@ -17,8 +18,9 @@ def read_large_file(file_object):
         # Yield the line of data
         yield data
 
+
 # Open a connection to the file
-with open('world_dev_ind.csv') as file:
+with open('input/world_ind_pop_data.csv') as file:
     # Create a generator object for the file: gen_file
     gen_file = read_large_file(file)
 

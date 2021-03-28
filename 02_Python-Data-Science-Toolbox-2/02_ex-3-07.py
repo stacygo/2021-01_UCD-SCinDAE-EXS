@@ -1,7 +1,7 @@
 # Exercise 3-07: Processing data in chunks (1)
 
 # Open a connection to the file
-with open('world_dev_ind.csv') as file:
+with open('input/world_ind_pop_data.csv') as file:
 
     # Skip the column names
     file.readline()

@@ -3,6 +3,7 @@
 # The pandas package has been imported as pd and the file 'tweets.csv' is in your current directory for your use
 import pandas as pd
 
+
 # Define count_entries()
 def count_entries(csv_file, c_size, colname):
     """Return a dictionary with counts of
@@ -26,7 +27,7 @@ def count_entries(csv_file, c_size, colname):
 
 
 # Call count_entries(): result_counts
-result_counts = count_entries('tweets.csv', 10, 'lang')
+result_counts = count_entries('input/tweets.csv', 10, 'lang')
 
 # Print result_counts
 print(result_counts)

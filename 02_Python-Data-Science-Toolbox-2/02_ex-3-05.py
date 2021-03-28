@@ -23,6 +23,7 @@ row_lists = [['Arab World', 'ARB', 'Adolescent fertility rate (births per 1,000 
              ['Arab World', 'ARB', 'International migrant stock (% of population)', 'SM.POP.TOTL.ZS', '1960', '2.9906371279862403'],
              ['Arab World', 'ARB', 'International migrant stock, total', 'SM.POP.TOTL', '1960', '3324685.0']]
 
+
 def lists2dict(list1, list2):
     """Return a dictionary where list1 provides
     the keys and list2 provides the values."""
@@ -35,6 +36,7 @@ def lists2dict(list1, list2):
 
     # Return the dictionary
     return rs_dict
+
 
 # Import the pandas package
 import pandas as pd

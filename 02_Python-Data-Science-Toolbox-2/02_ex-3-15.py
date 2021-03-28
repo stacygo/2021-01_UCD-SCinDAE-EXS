@@ -4,6 +4,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 # Define plot_pop()
 def plot_pop(filename, country_code):
     # Initialize reader object: urb_pop_reader
@@ -36,10 +37,10 @@ def plot_pop(filename, country_code):
 
 
 # Set the filename: fn
-fn = 'ind_pop_data.csv'
+fn = 'input/world_ind_pop_data.csv'
 
 # Call plot_pop for country code 'CEB'
-plot_pop('ind_pop_data.csv', 'CEB')
+plot_pop(fn, 'CEB')
 
 # Call plot_pop for country code 'ARB'
-plot_pop('ind_pop_data.csv', 'ARB')
+plot_pop(fn, 'ARB')
