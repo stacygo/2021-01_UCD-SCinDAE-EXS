@@ -3,12 +3,8 @@
 # The pandas package has been imported as pd, and the banking DataFrame is in your environment.
 import pandas as pd
 
-banking = pd.DataFrame({'cust_id': ['8C35540A'],
-                        'acct_amount': [44244.7],
-                        'acct_cur': ['dollar'],
-                        'inv_amount': [35500.5],
-                        'account_opened': ['03-05-18'],
-                        'last_transaction': ['30-09-19']})
+banking = pd.read_csv('input/banking_dirty.csv', nrows=97)
+banking['acct_cur'] = pd.read_csv('input/banking_dirty_acct_cur.csv', header=None)
 
 # Find values of acct_cur that are equal to 'euro'
 acct_eu = banking['acct_cur'] == 'euro'

@@ -2,11 +2,7 @@
 
 import pandas as pd
 
-restaurants = pd.DataFrame({'rest_name': ['arnie morton  s of chicago'],
-                            'rest_addr': ['435 s. la cienega blv .'],
-                            'city': ['los angeles'],
-                            'phone': [3102461501],
-                            'cuisine_type': ['america']})
+restaurants = pd.read_csv('input/restaurants_L2_dirty.csv')
 
 # Import process from fuzzywuzzy
 from fuzzywuzzy import process

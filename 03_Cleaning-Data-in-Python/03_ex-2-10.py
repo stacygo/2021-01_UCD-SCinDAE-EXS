@@ -3,19 +3,8 @@
 # The airlines DataFrame is in your environment, and pandas is imported as pd.
 import pandas as pd
 
-airlines = pd.DataFrame({'id': [2913],
-                         'day': ['Friday'],
-                         'airline': ['TURKISH AIRLINES'],
-                         'destination': ['ISTANBUL'],
-                         'dest_region': ['Middle East'],
-                         'dest_size': ['Hub'],
-                         'boarding_area': ['Gates 91-102'],
-                         'dept_time': ['2018-12-31'],
-                         'wait_min': [225.0],
-                         'cleanliness': ['Dirty'],
-                         'safety': ['Very unsafe'],
-                         'satisfaction': ['Very unsatisfied'],
-                         'survey_response': ['The airport personnell forgot to alert us of delayed flights, the bathrooms could have been cleaner']})
+airlines = pd.read_csv('input/airlines_final.csv', nrows=29)
+airlines['survey_response'] = pd.read_csv('input/airlines_final_survey_response.csv', header=None, sep='\n')
 
 # Store length of each row in survey_response column
 resp_length = airlines['survey_response'].str.len()

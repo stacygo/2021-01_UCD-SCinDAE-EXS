@@ -3,19 +3,8 @@
 # The airlines DataFrame is in your environment, alongside pandas as pd.
 import pandas as pd
 
-airlines = pd.DataFrame({'id': [1351],
-                         'full_name': ['Melodie Stuart'],
-                         'day': ['Tuesday'],
-                         'airline': ['UNITED INTL'],
-                         'destination': ['KANSAI'],
-                         'dest_region': ['Asia'],
-                         'dest_size': ['Hub'],
-                         'boarding_area': ['Gates 91-102'],
-                         'dept_time': ['2018-12-31'],
-                         'wait_min': [115.0],
-                         'cleanliness': ['Clean'],
-                         'safety': ['Neutral'],
-                         'satisfaction': ['Very satisfied']})
+airlines = pd.read_csv('input/airlines_final.csv', nrows=200)
+airlines['full_name'] = pd.read_csv('input/airlines_final_full_name.csv', header=None)
 
 # Replace "Dr." with empty string ""
 airlines['full_name'] = airlines['full_name'].str.replace("Dr.", "")

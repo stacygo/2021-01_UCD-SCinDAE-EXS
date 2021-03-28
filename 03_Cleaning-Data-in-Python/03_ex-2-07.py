@@ -4,18 +4,7 @@
 import pandas as pd
 import numpy as np
 
-airlines = pd.DataFrame({'id': [1351],
-                         'day': ['Tuesday'],
-                         'airline': ['UNITED INTL'],
-                         'destination': ['KANSAI'],
-                         'dest_region': ['Asia'],
-                         'dest_size': ['Hub'],
-                         'boarding_area': ['Gates 91-102'],
-                         'dept_time': ['2018-12-31'],
-                         'wait_min': [115.0],
-                         'cleanliness': ['Clean'],
-                         'safety': ['Neutral'],
-                         'satisfaction': ['Very satisfied']})
+airlines = pd.read_csv('input/airlines_final.csv')
 
 # Create ranges for categories
 label_ranges = [0, 60, 180, np.inf]

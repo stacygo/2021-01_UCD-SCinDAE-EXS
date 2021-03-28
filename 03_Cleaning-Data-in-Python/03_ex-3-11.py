@@ -2,15 +2,12 @@
 
 import pandas as pd
 
-banking = pd.DataFrame({'cust_id': ['8C35540A'],
-                        'age': [54],
-                        'acct_amount': [44244.7],
-                        'inv_amount': [35500.5],
-                        'account_opened': ['03-05-18'],
-                        'last_transaction': ['30-09-19']})
+banking = pd.read_csv('input/banking_dirty.csv')
+banking.loc[banking['age'] < 29, 'cust_id'] = None
+banking.loc[banking['age'] < 30, 'acct_amount'] = None
 
 # Drop missing values of cust_id
-banking_fullid = banking.dropna(subset = ['cust_id'])
+banking_fullid = banking.dropna(subset=['cust_id'])
 
 # Compute estimated acct_amount
 acct_imp = banking_fullid['inv_amount'] * 5

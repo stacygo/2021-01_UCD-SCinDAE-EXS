@@ -3,22 +3,11 @@
 # The pandas package has been imported as pd, and the airlines and categories DataFrames are in your environment.
 import pandas as pd
 
-airlines = pd.DataFrame({'id': [1351],
-                         'day': ['Tuesday'],
-                         'airline': ['UNITED INTL'],
-                         'destination': ['KANSAI'],
-                         'dest_region': ['Asia'],
-                         'dest_size': ['Hub'],
-                         'boarding_area': ['Gates 91-102'],
-                         'dept_time': ['2018-12-31'],
-                         'wait_min': [115.0],
-                         'cleanliness': ['Clean'],
-                         'safety': ['Neutral'],
-                         'satisfaction': ['Very satisfied']})
+airlines = pd.read_csv('input/airlines_final.csv')
 
-categories = pd.DataFrame({'cleanliness': ['Clean'],
-                           'safety': ['Neutral'],
-                           'satisfaction': ['Very satisfied']})
+categories = pd.DataFrame({'cleanliness': ['Clean', 'Average', 'Somewhat clean', 'Somewhat dirty', 'Dirty'],
+                           'safety': ['Neutral', 'Very safe', 'Somewhat safe', 'Very unsafe', 'Somewhat unsafe'],
+                           'satisfaction': ['Very satisfied', 'Neutral', 'Somewhat satisfied', 'Somewhat unsatisfied', 'Very unsatisfied']})
 
 # Print categories DataFrame
 print(categories)

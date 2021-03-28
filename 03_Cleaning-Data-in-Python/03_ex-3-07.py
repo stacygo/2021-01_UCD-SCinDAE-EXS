@@ -4,17 +4,7 @@
 import pandas as pd
 import datetime as dt
 
-banking = pd.DataFrame({'cust_id': ['8C35540A'],
-                        'birth_date': ['1962-06-09 00:00:00'],
-                        'age': [59],
-                        'acct_amount': [63523.3],
-                        'inv_amount': [51295],
-                        'fund_A': [30105.0],
-                        'fund_B': [4138.0],
-                        'fund_C': [1420.0],
-                        'fund_D': [15632.0],
-                        'account_opened': ['02-09-18'],
-                        'last_transaction': ['22-02-19']})
+banking = pd.read_csv('input/banking_dirty.csv')
 
 # Store fund columns to sum against
 fund_columns = ['fund_A', 'fund_B', 'fund_C', 'fund_D']
