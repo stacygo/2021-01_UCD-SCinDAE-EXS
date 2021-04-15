@@ -1,13 +1,11 @@
 # Exercise 2-10: Turning pairs of datetimes into durations
 
-import datetime
+import pandas as pd
 
-onebike_datetimes = [{'start': datetime.datetime(2017, 10, 1, 15, 23, 25),
-                      'end': datetime.datetime(2017, 10, 1, 15, 26, 26)},
-                     {'start': datetime.datetime(2017, 10, 1, 15, 42, 57),
-                      'end': datetime.datetime(2017, 10, 1, 17, 49, 59)},
-                     {'start': datetime.datetime(2017, 10, 2, 6, 37, 10),
-                      'end': datetime.datetime(2017, 10, 2, 6, 42, 53)}]
+df = pd.read_csv('input/capital-onebike.csv', parse_dates=['Start date', 'End date'])
+df = df.rename(columns={"Start date": "start", "End date": "end"})
+
+onebike_datetimes = df[['start', 'end']].to_dict('records')
 
 # Initialize a list for all the trip durations
 onebike_durations = []

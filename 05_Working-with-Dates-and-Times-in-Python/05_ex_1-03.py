@@ -1,10 +1,9 @@
 # Exercise 1-03: How many hurricanes come early?
 
-import datetime
+import pickle
 
-florida_hurricane_dates = [datetime.date(1950, 8, 31),
-                           datetime.date(1950, 9, 5),
-                           datetime.date(1950, 10, 18)]
+with open('input/florida_hurricane_dates.pkl', 'rb') as file:
+    florida_hurricane_dates = pickle.load(file)
 
 # Counter for how many before June 1
 early_hurricanes = 0

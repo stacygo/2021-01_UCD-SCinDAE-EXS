@@ -1,12 +1,9 @@
 # Exercise 1-06: Counting events per calendar month
 
-import datetime
+import pickle
 
-florida_hurricane_dates = [datetime.date(1950, 8, 31),
-                           datetime.date(1950, 9, 5),
-                           datetime.date(1950, 10, 18),
-                           datetime.date(1950, 10, 21),
-                           datetime.date(1951, 5, 18)]
+with open('input/florida_hurricane_dates.pkl', 'rb') as file:
+    florida_hurricane_dates = pickle.load(file)
 
 # A dictionary to count hurricanes per calendar month
 hurricanes_each_month = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0,

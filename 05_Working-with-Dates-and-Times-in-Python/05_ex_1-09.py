@@ -1,14 +1,9 @@
 # Exercise 1-09: Printing dates in a friendly format
 
-import datetime
+import pickle
 
-florida_hurricane_dates = [datetime.date(1950, 8, 31),
-                           datetime.date(1950, 9, 5),
-                           datetime.date(1950, 10, 18),
-                           datetime.date(1950, 10, 21),
-                           datetime.date(1951, 5, 18),
-                           datetime.date(1951, 10, 2),
-                           datetime.date(1952, 2, 3)]
+with open('input/florida_hurricane_dates.pkl', 'rb') as file:
+    florida_hurricane_dates = pickle.load(file)
 
 # Assign the earliest date to first_date
 first_date = min(florida_hurricane_dates)
