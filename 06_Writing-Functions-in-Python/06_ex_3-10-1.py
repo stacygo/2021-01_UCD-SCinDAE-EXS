@@ -1,4 +1,7 @@
-# Exercise 3-10: Closures keep your values safe
+# Exercise 3-10: Closures keep your values safe (1)
+
+# Show that you still get the original message even
+# if you redefine my_special_function() to only print "hello".
 
 
 def my_special_function():
@@ -21,14 +24,3 @@ def my_special_function():
 
 
 new_func()
-
-# Delete my_special_function()
-del(my_special_function)
-
-new_func()
-
-# Overwrite `my_special_function` with the new function
-my_special_function = get_new_func(my_special_function)
-
-my_special_function()
-

@@ -1,5 +1,6 @@
 # Exercise 3-02: Building a command line data app
 
+from functions import mean, std, minimum, maximum, load_data, get_user_input
 
 # Add the missing function references to the function map
 function_map = {

@@ -1,7 +1,5 @@
 # Exercise 4-12: Check the return type
 
-from functools import wraps
-
 
 def returns_dict(func):
     # Complete the returns_dict() decorator

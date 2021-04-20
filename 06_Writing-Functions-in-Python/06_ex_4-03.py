@@ -1,5 +1,6 @@
 # Exercise 4-03: Counter
 
+
 def counter(func):
     def wrapper(*args, **kwargs):
         wrapper.count += 1
@@ -9,10 +10,12 @@ def counter(func):
     # Return the new decorated function
     return wrapper
 
+
 # Decorate foo() with the counter() decorator
 @counter
 def foo():
     print('calling foo()')
+
 
 foo()
 foo()

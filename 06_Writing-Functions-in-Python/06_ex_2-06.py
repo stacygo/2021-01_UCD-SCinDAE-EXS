@@ -20,5 +20,5 @@ def open_read_only(filename):
     read_only_file.close()
 
 
-with open_read_only('my_file.txt') as my_file:
+with open_read_only('input/my_file.txt') as my_file:
     print(my_file.read())

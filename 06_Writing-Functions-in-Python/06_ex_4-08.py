@@ -1,16 +1,6 @@
 # Exercise 4-08: Run_n_times()
 
-from functools import wraps
-
-
-def run_n_times(n):
-    """Define and return a decorator"""
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            for i in range(n):
-                func(*args, **kwargs)
-        return wrapper
-    return decorator
+from functions import run_n_times
 
 
 # Make print_sum() run 10 times with the run_n_times() decorator

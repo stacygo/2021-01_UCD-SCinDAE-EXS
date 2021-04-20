@@ -1,5 +1,7 @@
 # Exercise 3-07: Modifying variables outside local scope
 
+from numpy import random
+
 call_count = 0
 
 
@@ -28,7 +30,7 @@ def read_files():
         with open(filename) as fin:
             file_contents.append(fin.read())
 
-    for filename in ['1984.txt', 'MobyDick.txt', 'CatsEye.txt']:
+    for filename in ['input/1984.txt', 'input/MobyDick.txt', 'input/CatsEye.txt']:
         save_contents(filename)
 
     return file_contents

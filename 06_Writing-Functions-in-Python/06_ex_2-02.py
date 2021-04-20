@@ -1,7 +1,7 @@
 # Exercise 2-02: The number of cats
 
 # Open "alice.txt" and assign the file to "file"
-with open('alice.txt') as file:
+with open('input/alice.txt') as file:
     text = file.read()
 
 n = 0

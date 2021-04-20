@@ -1,5 +1,6 @@
 # Exercise 4-02: Print the return type
 
+
 def print_return_type(func):
     # Define wrapper(), the decorated function
     def wrapper(*args, **kwargs):

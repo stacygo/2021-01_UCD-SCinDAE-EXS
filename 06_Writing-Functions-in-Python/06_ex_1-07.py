@@ -1,5 +1,6 @@
 # Exercise 1-07: Split up a function
 
+
 def mean(values):
     """Get the mean of a list of values
 

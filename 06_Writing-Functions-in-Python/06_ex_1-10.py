@@ -1,5 +1,8 @@
 # Exercise 1-10: Best practice for default arguments
 
+import pandas
+
+
 # Use an immutable variable for the default argument
 def better_add_column(values, df=None):
     """Add a column of `values` to a DataFrame `df`.
