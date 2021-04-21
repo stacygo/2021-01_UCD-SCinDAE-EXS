@@ -1,7 +1,7 @@
 # Exercise 1-14: Comparison of ECDFs
 
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 
 setosa_petal_length = [1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.6, 1.4, 1.1, 1.2,
@@ -20,9 +20,9 @@ virginica_petal_length = [6., 5.1, 5.9, 5.6, 5.8, 6.6, 4.5, 6.3, 5.8, 6.1, 5.1, 
                           5.2, 5., 5.2, 5.4, 5.1]
 
 # Compute ECDFs
-x_set, y_set = functions.ecdf(setosa_petal_length)
-x_vers, y_vers = functions.ecdf(versicolor_petal_length)
-x_virg, y_virg = functions.ecdf(virginica_petal_length)
+x_set, y_set = ecdf(setosa_petal_length)
+x_vers, y_vers = ecdf(versicolor_petal_length)
+x_virg, y_virg = ecdf(virginica_petal_length)
 
 # Plot all ECDFs on the same plot
 plt.plot(x_set, y_set, marker='.', linestyle='none')

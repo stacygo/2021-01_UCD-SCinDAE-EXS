@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 belmont_no_outliers = [148.51, 146.65, 148.52, 150.7, 150.42, 150.88, 151.57, 147.54, 149.65,
                        148.74, 147.86, 148.75, 147.5, 148.26, 149.71, 146.56, 151.19, 147.88,
@@ -22,8 +22,8 @@ sigma = np.std(belmont_no_outliers)
 samples = np.random.normal(mu, sigma, size=10000)
 
 # Get the CDF of the samples and of the data
-x_theor, y_theor = functions.ecdf(samples)
-x, y = functions.ecdf(belmont_no_outliers)
+x_theor, y_theor = ecdf(samples)
+x, y = ecdf(belmont_no_outliers)
 
 # Plot the CDFs and show the plot
 _ = plt.plot(x_theor, y_theor)

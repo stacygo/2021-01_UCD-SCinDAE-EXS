@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 np.random.seed(42)
 
@@ -10,7 +10,7 @@ np.random.seed(42)
 n_defaults = np.random.binomial(100, 0.05, size=10000)
 
 # Compute CDF: x, y
-x, y = functions.ecdf(n_defaults)
+x, y = ecdf(n_defaults)
 
 # Plot the CDF with axis labels
 plt.plot(x, y, marker='.', linestyle='none')

@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf, perform_bernoulli_trials
 
 # Seed random number generator
 np.random.seed(42)
@@ -12,10 +12,10 @@ n_defaults = np.empty(1000)
 
 # Compute the number of defaults
 for i in range(1000):
-    n_defaults[i] = functions.perform_bernoulli_trials(100, 0.05)
+    n_defaults[i] = perform_bernoulli_trials(100, 0.05)
 
 # Compute ECDF: x, y
-x, y = functions.ecdf(n_defaults)
+x, y = ecdf(n_defaults)
 
 # Plot the ECDF with labeled axes
 plt.plot(x, y, marker='.', linestyle='none')

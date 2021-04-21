@@ -1,8 +1,7 @@
 # Exercise 1-13: Plotting the ECDF
 
-import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 
 versicolor_petal_length = [4.7, 4.5, 4.9, 4.,  4.6, 4.5, 4.7, 3.3, 4.6, 3.9, 3.5, 4.2, 4., 4.7,
@@ -11,7 +10,7 @@ versicolor_petal_length = [4.7, 4.5, 4.9, 4.,  4.6, 4.5, 4.7, 3.3, 4.6, 3.9, 3.5
                            4., 3.3, 4.2, 4.2, 4.2, 4.3, 3., 4.1]
 
 # Compute ECDF for versicolor data: x_vers, y_vers
-x_vers, y_vers = functions.ecdf(versicolor_petal_length)
+x_vers, y_vers = ecdf(versicolor_petal_length)
 
 # Generate plot
 plt.plot(x_vers, y_vers, marker='.', linestyle='none')
