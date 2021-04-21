@@ -1,16 +1,14 @@
 # Exercise 3-11: Hyperparameter tuning with RandomizedSearchCV
 
 import pandas as pd
+from scipy.stats import randint
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import RandomizedSearchCV
 
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes']
 X = df.drop('diabetes', axis=1)
-
-# Import necessary modules
-from scipy.stats import randint
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import RandomizedSearchCV
 
 # Setup the parameters and distributions to sample from: param_dist
 param_dist = {"max_depth": [3, None],

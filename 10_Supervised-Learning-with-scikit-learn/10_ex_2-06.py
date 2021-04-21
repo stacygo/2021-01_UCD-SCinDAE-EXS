@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 df = pd.read_csv('input/gm_2008_region.csv')
 
@@ -13,14 +14,11 @@ plt.scatter(X_fertility, y, color='blue')
 plt.xlabel('Fertility')
 plt.ylabel('Life Expectancy')
 
-# Import LinearRegression
-from sklearn.linear_model import LinearRegression
-
 # Create the regressor: reg
 reg = LinearRegression()
 
 # Create the prediction space
-prediction_space = np.linspace(min(X_fertility), max(X_fertility)).reshape(-1,1)
+prediction_space = np.linspace(min(X_fertility), max(X_fertility)).reshape(-1, 1)
 
 # Fit the model to the data
 reg.fit(X_fertility, y)

@@ -2,15 +2,13 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
 
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes']
 X = df.drop('diabetes', axis=1)
-
-# Import necessary modules
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
 
 # Setup the hyperparameter grid
 c_space = np.logspace(-5, 8, 15)

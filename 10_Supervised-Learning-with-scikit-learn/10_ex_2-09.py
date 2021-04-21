@@ -2,15 +2,13 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import cross_val_score
 
 df = pd.read_csv('input/gm_2008_region.csv')
 
 y = df['life'].values
 X = df.drop(['life', 'Region'], axis=1).values
-
-# Import the necessary modules
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import cross_val_score
 
 # Create a linear regression object: reg
 reg = LinearRegression()

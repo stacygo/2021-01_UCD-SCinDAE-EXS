@@ -1,12 +1,10 @@
 # Exercise 1-11: Train/Test Split + Fit/Predict/Accuracy
 
 from sklearn import datasets
-
-digits = datasets.load_digits()
-
-# Import necessary modules
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
+
+digits = datasets.load_digits()
 
 # Create feature and target arrays
 X = digits.data

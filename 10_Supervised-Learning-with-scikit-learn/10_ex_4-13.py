@@ -24,7 +24,7 @@ steps = [('imputation', SimpleImputer(missing_values=np.nan, strategy='mean')),
 pipeline = Pipeline(steps)
 
 # Specify the hyperparameter space
-parameters = {'elasticnet__l1_ratio': np.linspace(0,1,30)}
+parameters = {'elasticnet__l1_ratio': np.linspace(0, 1, 30)}
 
 # Create train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

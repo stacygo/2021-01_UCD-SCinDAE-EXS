@@ -1,8 +1,8 @@
 # Exercise 1-07: k-Nearest Neighbors: Fit
 
-import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from sklearn.neighbors import KNeighborsClassifier
 
 df = pd.read_csv('input/house-votes-84.csv')
 df[df == '?'] = 'NaN'
@@ -12,9 +12,6 @@ df[df == 'n'] = 0
 imp = SimpleImputer(missing_values='NaN', strategy='most_frequent')
 imp.fit(df.values)
 df = pd.DataFrame(imp.transform(df.values), columns=df.columns)
-
-# Import KNeighborsClassifier from sklearn.neighbors
-from sklearn.neighbors import KNeighborsClassifier
 
 # Create arrays for the features and the response variable
 y = df['party'].values

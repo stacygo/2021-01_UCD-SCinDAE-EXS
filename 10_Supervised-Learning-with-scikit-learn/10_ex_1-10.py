@@ -1,6 +1,5 @@
 # Exercise 1-10: The digits recognition dataset
 
-# Import necessary modules
 from sklearn import datasets
 import matplotlib.pyplot as plt
 

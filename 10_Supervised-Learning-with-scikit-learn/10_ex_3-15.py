@@ -2,17 +2,15 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import ElasticNet
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes'].values
 X = df.drop('diabetes', axis=1).values
-
-# Import necessary modules
-from sklearn.linear_model import ElasticNet
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import train_test_split
 
 # Create train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

@@ -3,15 +3,13 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import Ridge
+from sklearn.model_selection import cross_val_score
 
 df = pd.read_csv('input/gm_2008_region.csv')
 
 y = df['life'].values
 X = df.drop(['life', 'Region'], axis=1).values
-
-# Import necessary modules
-from sklearn.linear_model import Ridge
-from sklearn.model_selection import cross_val_score
 
 # Setup the array of alphas and lists to store scores
 alpha_space = np.logspace(-4, 0, 50)

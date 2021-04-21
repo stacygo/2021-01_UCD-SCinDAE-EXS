@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import scale
 
 df = pd.read_csv('input/white-wine.csv')
 df.loc[df['quality'] <= 5, 'quality'] = 1
@@ -9,9 +10,6 @@ df.loc[df['quality'] > 5, 'quality'] = 0
 
 y = df['quality'].values
 X = df.drop(['quality'], axis=1).values
-
-# Import scale
-from sklearn.preprocessing import scale
 
 # Scale the features: X_scaled
 X_scaled = scale(X)

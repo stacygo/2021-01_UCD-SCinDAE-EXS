@@ -3,6 +3,8 @@
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
 df = pd.read_csv('input/white-wine.csv')
 df.loc[df['quality'] <= 5, 'quality'] = 1
@@ -10,10 +12,6 @@ df.loc[df['quality'] > 5, 'quality'] = 0
 
 y = df['quality']
 X = df.drop(['quality'], axis=1)
-
-# Import the necessary modules
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
 
 # Setup the pipeline steps: steps
 steps = [('scaler', StandardScaler()),

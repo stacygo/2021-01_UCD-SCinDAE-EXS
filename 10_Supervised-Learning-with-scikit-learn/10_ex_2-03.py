@@ -1,7 +1,5 @@
 # Exercise 2-03: Importing data for supervised learning
 
-# Import numpy and pandas
-import numpy as np
 import pandas as pd
 
 # Read the CSV file into a DataFrame: df

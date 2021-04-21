@@ -2,15 +2,13 @@
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, classification_report
 
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes']
 X = df.drop('diabetes', axis=1)
-
-# Import the necessary modules
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, classification_report
 
 # Create training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

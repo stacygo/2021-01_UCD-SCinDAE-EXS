@@ -2,15 +2,13 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.linear_model import Lasso
 
 df = pd.read_csv('input/gm_2008_region.csv')
 
 y = df['life'].values
 X = df.drop(['life', 'Region'], axis=1).values
 df_columns = df.drop(['life', 'Region'], axis=1).columns
-
-# Import Lasso
-from sklearn.linear_model import Lasso
 
 # Instantiate a lasso regressor: lasso
 lasso = Lasso(alpha=0.4, normalize=True)

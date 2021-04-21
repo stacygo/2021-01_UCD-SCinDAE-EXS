@@ -3,6 +3,9 @@
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import GridSearchCV
 
 df = pd.read_csv('input/diabetes.csv')
 
@@ -18,11 +21,6 @@ df['triceps'] = imp.transform(df['triceps'].values.reshape(-1, 1))
 
 y = df['diabetes']
 X = df.drop('diabetes', axis=1)
-
-# Import necessary modules
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GridSearchCV
 
 # Create the hyperparameter grid
 c_space = np.logspace(-5, 8, 15)

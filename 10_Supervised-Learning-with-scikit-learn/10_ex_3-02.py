@@ -3,15 +3,13 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes']
 X = df.drop('diabetes', axis=1)
-
-# Import necessary modules
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
 
 # Create training and test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

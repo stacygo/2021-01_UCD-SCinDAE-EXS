@@ -3,6 +3,9 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.svm import SVC
 
 df = pd.read_csv('input/house-votes-84.csv')
 df[df == '?'] = 'NaN'
@@ -11,11 +14,6 @@ df[df == 'n'] = 0
 
 y = df['party']
 X = df.drop(['party'], axis=1)
-
-# Import necessary modules
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from sklearn.svm import SVC
 
 # Setup the pipeline steps: steps
 steps = [('imputation', SimpleImputer(missing_values='NaN', strategy='most_frequent')),

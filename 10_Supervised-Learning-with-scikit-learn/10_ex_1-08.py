@@ -1,8 +1,8 @@
 # Exercise 1-08: k-Nearest Neighbors: Predict
 
-import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from sklearn.neighbors import KNeighborsClassifier
 
 df = pd.read_csv('input/house-votes-84.csv')
 df[df == '?'] = 'NaN'
@@ -18,9 +18,6 @@ X_new_data = {'0': [0.696469], '1': [0.286139], '2': [0.226851], '3': [0.551315]
               '8': [0.480932], '9': [0.392118], '10': [0.343178], '11': [0.72905],
               '12': [0.438572], '13': [0.059678], '14': [0.398044], '15': [0.737995]}
 X_new = pd.DataFrame.from_dict(X_new_data)
-
-# Import KNeighborsClassifier from sklearn.neighbors
-from sklearn.neighbors import KNeighborsClassifier
 
 # Create arrays for the features and the response variable
 y = df['party'].values

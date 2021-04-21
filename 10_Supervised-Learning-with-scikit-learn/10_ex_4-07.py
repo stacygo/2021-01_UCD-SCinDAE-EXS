@@ -1,6 +1,5 @@
 # Exercise 4-07: Imputing missing data in a ML Pipeline I
 
-# Import the Imputer module
 from sklearn.impute import SimpleImputer
 from sklearn.svm import SVC
 
