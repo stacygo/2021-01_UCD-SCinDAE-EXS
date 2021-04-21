@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('input/diabetes.csv')
 
-y = df['diabetes'].values
+y = df['diabetes']
 X = df.drop('diabetes', axis=1)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

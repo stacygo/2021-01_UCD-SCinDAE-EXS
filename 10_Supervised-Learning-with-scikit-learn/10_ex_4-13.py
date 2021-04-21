@@ -12,7 +12,7 @@ from sklearn.model_selection import GridSearchCV
 df = pd.read_csv('input/gm_2008_region.csv')
 df = pd.get_dummies(df, drop_first=True)
 
-y = df['life'].values.reshape(-1, 1)
+y = df['life'].values
 X = df.drop(['life'], axis=1).values
 
 # Setup the pipeline steps: steps

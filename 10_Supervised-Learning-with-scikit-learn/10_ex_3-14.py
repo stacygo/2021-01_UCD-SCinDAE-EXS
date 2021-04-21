@@ -2,10 +2,21 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.impute import SimpleImputer
 
 df = pd.read_csv('input/diabetes.csv')
 
-y = df['diabetes'].values
+imp = SimpleImputer(missing_values=0, strategy='mean')
+imp.fit(df['insulin'].values.reshape(-1, 1))
+df['insulin'] = imp.transform(df['insulin'].values.reshape(-1, 1))
+
+imp.fit(df['bmi'].values.reshape(-1, 1))
+df['bmi'] = imp.transform(df['bmi'].values.reshape(-1, 1))
+
+imp.fit(df['triceps'].values.reshape(-1, 1))
+df['triceps'] = imp.transform(df['triceps'].values.reshape(-1, 1))
+
+y = df['diabetes']
 X = df.drop('diabetes', axis=1)
 
 # Import necessary modules
@@ -18,7 +29,7 @@ c_space = np.logspace(-5, 8, 15)
 param_grid = {'C': c_space, 'penalty': ['l1', 'l2']}
 
 # Instantiate the logistic regression classifier: logreg
-logreg = LogisticRegression()
+logreg = LogisticRegression(solver='liblinear', multi_class='ovr', n_jobs=1)
 
 # Create train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)

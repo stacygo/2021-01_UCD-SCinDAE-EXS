@@ -9,8 +9,8 @@ df[df == '?'] = 'NaN'
 df[df == 'y'] = 1
 df[df == 'n'] = 0
 
-y = df['party'].values.reshape(-1, 1)
-X = df.drop(['party'], axis=1).values
+y = df['party']
+X = df.drop(['party'], axis=1)
 
 # Import necessary modules
 from sklearn.impute import SimpleImputer

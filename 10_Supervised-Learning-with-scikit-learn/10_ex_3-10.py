@@ -5,7 +5,7 @@ import pandas as pd
 
 df = pd.read_csv('input/diabetes.csv')
 
-y = df['diabetes'].values
+y = df['diabetes']
 X = df.drop('diabetes', axis=1)
 
 # Import necessary modules

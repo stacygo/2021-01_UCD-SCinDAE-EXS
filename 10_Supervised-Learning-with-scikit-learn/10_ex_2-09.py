@@ -5,7 +5,7 @@ import pandas as pd
 
 df = pd.read_csv('input/gm_2008_region.csv')
 
-y = df['life'].values.reshape(-1, 1)
+y = df['life'].values
 X = df.drop(['life', 'Region'], axis=1).values
 
 # Import the necessary modules

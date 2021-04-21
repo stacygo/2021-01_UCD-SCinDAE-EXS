@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('input/diabetes.csv')
 
-y = df['diabetes'].values
+y = df['diabetes']
 X = df.drop('diabetes', axis=1)
 
 # Import the necessary modules

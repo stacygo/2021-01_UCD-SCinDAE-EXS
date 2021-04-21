@@ -6,7 +6,7 @@ import pandas as pd
 df = pd.read_csv('input/diabetes.csv')
 
 y = df['diabetes'].values
-X = df.drop('diabetes', axis=1)
+X = df.drop('diabetes', axis=1).values
 
 # Import necessary modules
 from sklearn.linear_model import ElasticNet
