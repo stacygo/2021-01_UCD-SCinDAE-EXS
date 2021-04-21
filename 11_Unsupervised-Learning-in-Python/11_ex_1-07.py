@@ -6,8 +6,8 @@ from sklearn.cluster import KMeans
 df = pd.read_csv('input/seeds.csv', header=None)
 samples = df.iloc[:, :7].values
 
-variety_names = {'1': 'Kama wheat', '2': 'Rosa wheat', '3': 'Canadian wheat'}
-varieties = df[7].to_list()
+variety_names = {1: 'Kama wheat', 2: 'Rosa wheat', 3: 'Canadian wheat'}
+varieties = df[7].map(variety_names).to_list()
 
 # Create a KMeans model with 3 clusters: model
 model = KMeans(n_clusters=3)
