@@ -1,7 +1,7 @@
 # Exercise 5-16: Measuring heritability
 
 import numpy as np
-import functions
+from functions import draw_bs_pairs
 
 bd_parent_scandens = np.array([8.3318, 8.4035, 8.5317, 8.7202, 8.7089, 8.7541, 8.773, 8.8107, 8.7919,
                       8.8069, 8.6523, 8.6146, 8.6938, 8.7127, 8.7466, 8.7504, 8.7805, 8.7428,
@@ -119,10 +119,10 @@ heritability_scandens = heritability(bd_parent_scandens, bd_offspring_scandens)
 heritability_fortis = heritability(bd_parent_fortis, bd_offspring_fortis)
 
 # Acquire 1000 bootstrap replicates of heritability
-replicates_scandens = functions.draw_bs_pairs(
+replicates_scandens = draw_bs_pairs(
     bd_parent_scandens, bd_offspring_scandens, heritability, size=1000)
 
-replicates_fortis = functions.draw_bs_pairs(
+replicates_fortis = draw_bs_pairs(
     bd_parent_fortis, bd_offspring_fortis, heritability, size=1000)
 
 # Compute 95% confidence intervals

@@ -1,7 +1,7 @@
 # Exercise 3-12: A two-sample bootstrap hypothesis test for difference of means
 
 import numpy as np
-import functions
+from functions import draw_bs_reps
 
 force_a = [1.612, 0.605, 0.327, 0.946, 0.541, 1.539, 0.529, 0.628, 1.453, 0.297, 0.703, 0.269,
            0.751, 0.245, 1.182, 0.515, 0.435, 0.383, 0.457, 0.73]
@@ -19,8 +19,8 @@ force_a_shifted = force_a - np.mean(force_a) + mean_force
 force_b_shifted = force_b - np.mean(force_b) + mean_force
 
 # Compute 10,000 bootstrap replicates from shifted arrays
-bs_replicates_a = functions.draw_bs_reps(force_a_shifted, np.mean, 10000)
-bs_replicates_b = functions.draw_bs_reps(force_b_shifted, np.mean, 10000)
+bs_replicates_a = draw_bs_reps(force_a_shifted, np.mean, 10000)
+bs_replicates_b = draw_bs_reps(force_b_shifted, np.mean, 10000)
 
 # Get replicates of difference of means: bs_replicates
 bs_replicates = bs_replicates_a - bs_replicates_b

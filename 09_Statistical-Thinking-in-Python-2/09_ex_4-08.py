@@ -1,7 +1,7 @@
 # Exercise 4-08: Hypothesis test on Pearson correlation
 
 import numpy as np
-import functions
+from functions import pearson_r
 
 illiteracy = [9.5, 49.2, 1., 11.2, 9.8, 60., 50.2, 51.2, 0.6, 1., 8.5, 6.1, 9.8, 1., 42.2, 77.2,
               18.7, 22.8, 8.5, 43.9, 1., 1., 1.5, 10.8, 11.9, 3.4, 0.4, 3.1, 6.6, 33.7, 40.4, 2.3,
@@ -30,7 +30,7 @@ fertility = [1.769, 2.682, 2.077, 2.132, 1.827, 3.872, 2.288, 5.173, 1.393, 1.26
              0.966, 2.373, 2.663, 1.251, 2.052, 3.371, 2.093, 2., 3.883, 3.852, 3.718, 1.732, 3.928]
 
 # Compute observed correlation: r_obs
-r_obs = functions.pearson_r(illiteracy, fertility)
+r_obs = pearson_r(illiteracy, fertility)
 
 # Initialize permutation replicates: perm_replicates
 perm_replicates = np.empty(10000)
@@ -41,7 +41,7 @@ for i in range(10000):
     illiteracy_permuted = np.random.permutation(illiteracy)
 
     # Compute Pearson correlation
-    perm_replicates[i] = functions.pearson_r(illiteracy_permuted, fertility)
+    perm_replicates[i] = pearson_r(illiteracy_permuted, fertility)
 
 # Compute p-value: p
 p = np.sum(perm_replicates >= r_obs) / len(perm_replicates)

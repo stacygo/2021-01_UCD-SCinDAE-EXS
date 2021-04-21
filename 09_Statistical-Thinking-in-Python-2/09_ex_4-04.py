@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import diff_of_means, draw_perm_reps, ecdf
 
 nht_dead = [-1, 894, 10, 130, 1, 934, 29, 6, 485, 254, 372, 81, 191, 355, 180, 286, 47, 269,
             361, 173, 246, 492, 462, 1319, 58, 297, 31, 2970, 640, 237, 434, 570, 77, 271, 563,
@@ -26,17 +26,17 @@ nht_live = [645, 2088, 42, 2090, 11, 886, 1665, 1084, 2900, 2432, 750, 4021, 107
             101, 876, 381, 905, 156, 419, 239, 119, 129, 467]
 
 # Compute the observed difference in mean inter-no-hitter times: nht_diff_obs
-nht_diff_obs = functions.diff_of_means(nht_dead, nht_live)
+nht_diff_obs = diff_of_means(nht_dead, nht_live)
 
 # Acquire 10,000 permutation replicates of difference in mean no-hitter time: perm_replicates
-perm_replicates = functions.draw_perm_reps(nht_dead, nht_live, functions.diff_of_means, 10000)
+perm_replicates = draw_perm_reps(nht_dead, nht_live, diff_of_means, 10000)
 
 # Compute and print the p-value: p
 p = np.sum(perm_replicates <= nht_diff_obs) / len(perm_replicates)
 print('p-val =', p)
 
-x_dead, y_dead = functions.ecdf(nht_dead)
-x_live, y_live = functions.ecdf(nht_live)
+x_dead, y_dead = ecdf(nht_dead)
+x_live, y_live = ecdf(nht_live)
 
 plt.plot(x_dead, y_dead, marker='.', linestyle='none')
 plt.plot(x_live, y_live, marker='.', linestyle='none')

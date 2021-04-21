@@ -1,8 +1,7 @@
 # Exercise 4-09: Do neonicotinoid insecticides have unintended consequences?
 
-import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 control = [4.159234, 4.408002, 0.172812, 3.498278, 3.104912, 5.164174, 6.615262, 4.633066,
            0.170408, 2.65, 0.0875, 1.997148, 6.92668, 4.574932, 3.896466, 5.209814, 3.70625,
@@ -34,8 +33,8 @@ treated = [1.342686, 1.058476, 3.793784, 0.40428, 4.528388, 2.142966, 3.937742, 
            2.064628, 0., 3.34101, 6.177322, 0., 3.66415, 2.352582, 1.531696]
 
 # Compute x,y values for ECDFs
-x_control, y_control = functions.ecdf(control)
-x_treated, y_treated = functions.ecdf(treated)
+x_control, y_control = ecdf(control)
+x_treated, y_treated = ecdf(treated)
 
 # Plot the ECDFs
 plt.plot(x_control, y_control, marker='.', linestyle='none')

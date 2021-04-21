@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import draw_bs_pairs_linreg
 
 bd_1975 = \
     np.array([8.4, 8.8, 8.4, 8., 7.9, 8.9, 8.6, 8.5, 8.9, 9.1, 8.6, 9.8, 8.2, 9., 9.7, 8.6, 8.2,
@@ -47,9 +47,9 @@ slope_2012, intercept_2012 = np.polyfit(bl_2012, bd_2012, 1)
 
 # Perform pairs bootstrap for the linear regressions
 bs_slope_reps_1975, bs_intercept_reps_1975 = \
-        functions.draw_bs_pairs_linreg(bl_1975, bd_1975, 1000)
+        draw_bs_pairs_linreg(bl_1975, bd_1975, 1000)
 bs_slope_reps_2012, bs_intercept_reps_2012 = \
-        functions.draw_bs_pairs_linreg(bl_2012, bd_2012, 1000)
+        draw_bs_pairs_linreg(bl_2012, bd_2012, 1000)
 
 # Make scatter plot of 1975 data
 _ = plt.plot(bl_1975, bd_1975, marker='.',

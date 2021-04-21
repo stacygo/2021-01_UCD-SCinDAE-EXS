@@ -1,7 +1,7 @@
 # Exercise 5-17: Is beak depth heritable at all in G. scandens?
 
 import numpy as np
-import functions
+from functions import heritability
 
 bd_parent_scandens = np.array([8.3318, 8.4035, 8.5317, 8.7202, 8.7089, 8.7541, 8.773, 8.8107, 8.7919,
                       8.8069, 8.6523, 8.6146, 8.6938, 8.7127, 8.7466, 8.7504, 8.7805, 8.7428,
@@ -107,7 +107,7 @@ bd_offspring_fortis = np.array([10.7, 9.78, 9.48, 9.6, 10.27, 9.5, 9., 7.46, 7.6
                        8.9, 8.75, 8.63, 9., 9.43, 8.28, 9.23, 10.4, 9., 9.8, 9.77, 8.97, 8.37,
                        7.7, 7.9, 9.5, 8.2, 8.8])
 
-heritability_scandens = functions.heritability(bd_parent_scandens, bd_offspring_scandens)
+heritability_scandens = heritability(bd_parent_scandens, bd_offspring_scandens)
 
 # Initialize array of replicates: perm_replicates
 perm_replicates = np.empty(10000)
@@ -116,7 +116,7 @@ perm_replicates = np.empty(10000)
 for i in range(10000):
     # Permute parent beak depths
     bd_parent_permuted = np.random.permutation(bd_parent_scandens)
-    perm_replicates[i] = functions.heritability(bd_parent_permuted, bd_offspring_scandens)
+    perm_replicates[i] = heritability(bd_parent_permuted, bd_offspring_scandens)
 
 # Compute p-value: p
 p = np.sum(perm_replicates >= heritability_scandens) / len(perm_replicates)

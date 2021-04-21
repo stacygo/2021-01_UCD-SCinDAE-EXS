@@ -1,9 +1,7 @@
 # Exercise 5-03: ECDFs of beak depths
 
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 bd_1975 = [8.4, 8.8, 8.4, 8., 7.9, 8.9, 8.6, 8.5, 8.9, 9.1, 8.6, 9.8, 8.2, 9., 9.7, 8.6, 8.2,
            9., 8.4, 8.6, 8.9, 9.1, 8.3, 8.7, 9.6, 8.5, 9.1, 9., 9.2, 9.9, 8.6, 9.2, 8.4, 8.9,
@@ -22,8 +20,8 @@ bd_2012 = [9.4, 8.9, 9.5, 11., 8.7, 8.4, 9.1, 8.7, 10.2, 9.6, 8.85, 8.8, 9.5, 9.
            8.4, 10., 9., 8.7, 8.8, 8.4, 9.3, 9.8, 8.9, 9.8, 9.1]
 
 # Compute ECDFs
-x_1975, y_1975 = functions.ecdf(bd_1975)
-x_2012, y_2012 = functions.ecdf(bd_2012)
+x_1975, y_1975 = ecdf(bd_1975)
+x_2012, y_2012 = ecdf(bd_2012)
 
 # Plot the ECDFs
 _ = plt.plot(x_1975, y_1975, marker='.', linestyle='none')

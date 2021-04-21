@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import draw_bs_pairs_linreg
 
 illiteracy = \
     np.array([9.5, 49.2, 1., 11.2, 9.8, 60., 50.2, 51.2, 0.6, 1., 8.5, 6.1, 9.8, 1., 42.2, 77.2,
@@ -32,7 +32,7 @@ fertility = \
               4.969, 5.659, 3.24, 1.693, 1.647, 2.36, 1.792, 3.45, 1.516, 2.233, 2.563, 5.283, 3.885,
               0.966, 2.373, 2.663, 1.251, 2.052, 3.371, 2.093, 2., 3.883, 3.852, 3.718, 1.732, 3.928])
 
-bs_slope_reps, bs_intercept_reps = functions.draw_bs_pairs_linreg(illiteracy, fertility, 1000)
+bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(illiteracy, fertility, 1000)
 
 # Generate array of x-values for bootstrap lines: x
 x = np.array([0, 100])

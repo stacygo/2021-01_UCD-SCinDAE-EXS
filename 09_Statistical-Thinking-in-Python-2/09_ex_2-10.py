@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import draw_bs_reps
 
 
 nohitter_times = [843, 1613, 1101, 215, 684, 814, 278, 324, 161, 219, 545, 715, 966, 624, 29, 450,
@@ -23,7 +23,7 @@ nohitter_times = [843, 1613, 1101, 215, 684, 814, 278, 324, 161, 219, 545, 715, 
                   603, 1349, 162, 1027, 783, 326, 101, 876, 381, 905, 156, 419, 239, 119, 129, 467]
 
 # Draw bootstrap replicates of the mean no-hitter time (equal to tau): bs_replicates
-bs_replicates = functions.draw_bs_reps(nohitter_times, np.mean, 10000)
+bs_replicates = draw_bs_reps(nohitter_times, np.mean, 10000)
 
 # Compute the 95% confidence interval: conf_int
 conf_int = np.percentile(bs_replicates, [2.5, 97.5])

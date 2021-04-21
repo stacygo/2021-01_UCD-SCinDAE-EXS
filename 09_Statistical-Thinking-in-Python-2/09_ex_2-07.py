@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import draw_bs_reps
 
 
 rainfall = [875.5, 648.2, 788.1, 940.3, 491.1, 743.5, 730.1, 686.5, 878.8, 865.6, 654.9, 831.5,
@@ -19,7 +19,7 @@ rainfall = [875.5, 648.2, 788.1, 940.3, 491.1, 743.5, 730.1, 686.5, 878.8, 865.6
             793.]
 
 # Take 10,000 bootstrap replicates of the mean: bs_replicates
-bs_replicates = functions.draw_bs_reps(rainfall, np.mean, 10000)
+bs_replicates = draw_bs_reps(rainfall, np.mean, 10000)
 
 # Compute and print SEM
 sem = np.std(rainfall) / np.sqrt(len(rainfall))

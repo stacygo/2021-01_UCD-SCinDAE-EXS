@@ -1,7 +1,7 @@
 # Exercise 5-10: Beak length to depth ratio
 
 import numpy as np
-import functions
+from functions import draw_bs_reps
 
 bd_1975 = \
     np.array([8.4, 8.8, 8.4, 8., 7.9, 8.9, 8.6, 8.5, 8.9, 9.1, 8.6, 9.8, 8.2, 9., 9.7, 8.6, 8.2,
@@ -49,8 +49,8 @@ mean_ratio_1975 = np.mean(ratio_1975)
 mean_ratio_2012 = np.mean(ratio_2012)
 
 # Generate bootstrap replicates of the means
-bs_replicates_1975 = functions.draw_bs_reps(ratio_1975, np.mean, 10000)
-bs_replicates_2012 = functions.draw_bs_reps(ratio_2012, np.mean, 10000)
+bs_replicates_1975 = draw_bs_reps(ratio_1975, np.mean, 10000)
+bs_replicates_2012 = draw_bs_reps(ratio_2012, np.mean, 10000)
 
 # Compute the 99% confidence intervals
 conf_int_1975 = np.percentile(bs_replicates_1975, [0.5, 99.5])

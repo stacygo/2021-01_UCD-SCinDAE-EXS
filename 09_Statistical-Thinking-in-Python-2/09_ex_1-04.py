@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf
 
 nohitter_times = [843, 1613, 1101, 215, 684, 814, 278, 324, 161, 219, 545, 715, 966, 624, 29, 450,
                   107, 20, 91, 1325, 124, 1468, 104, 1309, 429, 62, 1878, 1104, 123, 251, 93, 188,
@@ -26,10 +26,10 @@ tau = np.mean(nohitter_times)
 inter_nohitter_time = np.random.exponential(tau, 100000)
 
 # Create an ECDF from real data: x, y
-x, y = functions.ecdf(nohitter_times)
+x, y = ecdf(nohitter_times)
 
 # Create a CDF from theoretical samples: x_theor, y_theor
-x_theor, y_theor = functions.ecdf(inter_nohitter_time)
+x_theor, y_theor = ecdf(inter_nohitter_time)
 
 # Plot the theoretical CDFs
 plt.plot(x_theor, y_theor)
@@ -45,8 +45,8 @@ samples_half = np.random.exponential(tau/2, 10000)
 samples_double = np.random.exponential(tau * 2, 10000)
 
 # Generate CDFs from these samples
-x_half, y_half = functions.ecdf(samples_half)
-x_double, y_double = functions.ecdf(samples_double)
+x_half, y_half = ecdf(samples_half)
+x_double, y_double = ecdf(samples_double)
 
 # Plot these CDFs as lines
 _ = plt.plot(x_half, y_half)

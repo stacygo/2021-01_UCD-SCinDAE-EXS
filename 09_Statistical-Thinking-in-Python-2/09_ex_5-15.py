@@ -1,7 +1,7 @@
 # Exercise 5-15: Pearson correlation of offspring and parental data
 
 import numpy as np
-import functions
+from functions import draw_bs_pairs, pearson_r
 
 bd_parent_scandens = np.array([8.3318, 8.4035, 8.5317, 8.7202, 8.7089, 8.7541, 8.773, 8.8107, 8.7919,
                       8.8069, 8.6523, 8.6146, 8.6938, 8.7127, 8.7466, 8.7504, 8.7805, 8.7428,
@@ -108,15 +108,15 @@ bd_offspring_fortis = np.array([10.7, 9.78, 9.48, 9.6, 10.27, 9.5, 9., 7.46, 7.6
                        7.7, 7.9, 9.5, 8.2, 8.8])
 
 # Compute the Pearson correlation coefficients
-r_scandens = functions.pearson_r(bd_parent_scandens, bd_offspring_scandens)
-r_fortis = functions.pearson_r(bd_parent_fortis, bd_offspring_fortis)
+r_scandens = pearson_r(bd_parent_scandens, bd_offspring_scandens)
+r_fortis = pearson_r(bd_parent_fortis, bd_offspring_fortis)
 
 # Acquire 1000 bootstrap replicates of Pearson r
 bs_replicates_scandens = \
-    functions.draw_bs_pairs(bd_parent_scandens, bd_offspring_scandens, functions.pearson_r, 1000)
+    draw_bs_pairs(bd_parent_scandens, bd_offspring_scandens, pearson_r, 1000)
 
 bs_replicates_fortis = \
-    functions.draw_bs_pairs(bd_parent_fortis, bd_offspring_fortis, functions.pearson_r, 1000)
+    draw_bs_pairs(bd_parent_fortis, bd_offspring_fortis, pearson_r, 1000)
 
 # Compute 95% confidence intervals
 conf_int_scandens = np.percentile(bs_replicates_scandens, [2.5, 97.5])

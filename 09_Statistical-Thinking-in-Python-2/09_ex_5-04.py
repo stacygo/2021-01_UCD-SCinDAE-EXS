@@ -1,8 +1,7 @@
 # Exercise 5-04: Parameter estimates of beak depths
 
 import numpy as np
-import pandas as pd
-import functions
+from functions import diff_of_means, draw_bs_reps
 
 bd_1975 = [8.4, 8.8, 8.4, 8., 7.9, 8.9, 8.6, 8.5, 8.9, 9.1, 8.6, 9.8, 8.2, 9., 9.7, 8.6, 8.2,
            9., 8.4, 8.6, 8.9, 9.1, 8.3, 8.7, 9.6, 8.5, 9.1, 9., 9.2, 9.9, 8.6, 9.2, 8.4, 8.9,
@@ -21,11 +20,11 @@ bd_2012 = [9.4, 8.9, 9.5, 11., 8.7, 8.4, 9.1, 8.7, 10.2, 9.6, 8.85, 8.8, 9.5, 9.
            8.4, 10., 9., 8.7, 8.8, 8.4, 9.3, 9.8, 8.9, 9.8, 9.1]
 
 # Compute the difference of the sample means: mean_diff
-mean_diff = functions.diff_of_means(bd_2012, bd_1975)
+mean_diff = diff_of_means(bd_2012, bd_1975)
 
 # Get bootstrap replicates of means
-bs_replicates_1975 = functions.draw_bs_reps(bd_1975, np.mean, 10000)
-bs_replicates_2012 = functions.draw_bs_reps(bd_2012, np.mean, 10000)
+bs_replicates_1975 = draw_bs_reps(bd_1975, np.mean, 10000)
+bs_replicates_2012 = draw_bs_reps(bd_2012, np.mean, 10000)
 
 # Compute samples of difference of means: bs_diff_replicates
 bs_diff_replicates = bs_replicates_2012 - bs_replicates_1975

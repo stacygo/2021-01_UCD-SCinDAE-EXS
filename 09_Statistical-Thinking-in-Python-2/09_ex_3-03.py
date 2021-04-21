@@ -1,8 +1,7 @@
 # Exercise 3-03: Visualizing permutation sampling
 
-import numpy as np
 import matplotlib.pyplot as plt
-import functions
+from functions import ecdf, permutation_sample
 
 rain_june = [ 66.2, 39.7, 76.4, 26.5, 11.2, 61.8, 6.1, 48.4, 89.2, 104., 34., 60.6, 57.1, 79.1,
               90.9, 32.3, 63.8, 78.2, 27.5, 43.4, 30.1, 17.3, 77.5, 44.9, 92.2, 39.6, 79.4, 66.1,
@@ -29,11 +28,11 @@ rain_november = [83.6, 30.9, 62.2, 37., 41., 160.2, 18.2, 122.4, 71.3, 44.2, 49.
 
 for _ in range(50):
     # Generate permutation samples
-    perm_sample_1, perm_sample_2 = functions.permutation_sample(rain_june, rain_november)
+    perm_sample_1, perm_sample_2 = permutation_sample(rain_june, rain_november)
 
     # Compute ECDFs
-    x_1, y_1 = functions.ecdf(perm_sample_1)
-    x_2, y_2 = functions.ecdf(perm_sample_2)
+    x_1, y_1 = ecdf(perm_sample_1)
+    x_2, y_2 = ecdf(perm_sample_2)
 
     # Plot ECDFs of permutation sample
     _ = plt.plot(x_1, y_1, marker='.', linestyle='none',
@@ -42,8 +41,8 @@ for _ in range(50):
                  color='blue', alpha=0.02)
 
 # Create and plot ECDFs from original data
-x_1, y_1 = functions.ecdf(rain_june)
-x_2, y_2 = functions.ecdf(rain_november)
+x_1, y_1 = ecdf(rain_june)
+x_2, y_2 = ecdf(rain_november)
 _ = plt.plot(x_1, y_1, marker='.', linestyle='none', color='red')
 _ = plt.plot(x_2, y_2, marker='.', linestyle='none', color='blue')
 

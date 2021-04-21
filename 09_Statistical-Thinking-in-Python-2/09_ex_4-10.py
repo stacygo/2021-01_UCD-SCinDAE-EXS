@@ -1,7 +1,7 @@
 # Exercise 4-10: Bootstrap hypothesis test on bee sperm counts
 
 import numpy as np
-import functions
+from functions import diff_of_means, draw_bs_reps
 
 control = [4.159234, 4.408002, 0.172812, 3.498278, 3.104912, 5.164174, 6.615262, 4.633066,
            0.170408, 2.65, 0.0875, 1.997148, 6.92668, 4.574932, 3.896466, 5.209814, 3.70625,
@@ -33,7 +33,7 @@ treated = [1.342686, 1.058476, 3.793784, 0.40428, 4.528388, 2.142966, 3.937742, 
            2.064628, 0., 3.34101, 6.177322, 0., 3.66415, 2.352582, 1.531696]
 
 # Compute the difference in mean sperm count: diff_means
-diff_means = functions.diff_of_means(control, treated)
+diff_means = diff_of_means(control, treated)
 
 # Compute mean of pooled data: mean_count
 mean_count = np.mean(np.concatenate((control, treated)))
@@ -43,8 +43,8 @@ control_shifted = control - np.mean(control) + mean_count
 treated_shifted = treated - np.mean(treated) + mean_count
 
 # Generate bootstrap replicates
-bs_reps_control = functions.draw_bs_reps(control_shifted, np.mean, size=10000)
-bs_reps_treated = functions.draw_bs_reps(treated_shifted, np.mean, size=10000)
+bs_reps_control = draw_bs_reps(control_shifted, np.mean, size=10000)
+bs_reps_treated = draw_bs_reps(treated_shifted, np.mean, size=10000)
 
 # Get replicates of difference of means: bs_replicates
 bs_replicates = bs_reps_control - bs_reps_treated

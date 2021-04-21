@@ -1,7 +1,7 @@
 # Exercise 1-06: EDA of literacy/fertility data
 
 import matplotlib.pyplot as plt
-import functions
+from functions import pearson_r
 
 
 illiteracy = [9.5, 49.2, 1., 11.2, 9.8, 60., 50.2, 51.2, 0.6, 1., 8.5, 6.1, 9.8, 1., 42.2, 77.2,
@@ -42,4 +42,4 @@ _ = plt.ylabel('fertility')
 plt.show()
 
 # Show the Pearson correlation coefficient
-print(functions.pearson_r(illiteracy, fertility))
+print(pearson_r(illiteracy, fertility))

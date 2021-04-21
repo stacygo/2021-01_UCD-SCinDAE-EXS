@@ -1,7 +1,7 @@
 # Exercise 4-02: The vote for the Civil Rights Act in 1964
 
 import numpy as np
-import functions
+from functions import draw_perm_reps
 
 # Construct arrays of data: dems, reps
 dems = np.array([True] * 153 + [False] * 91)
@@ -15,7 +15,7 @@ def frac_yea_dems(dems, reps):
 
 
 # Acquire permutation samples: perm_replicates
-perm_replicates = functions.draw_perm_reps(dems, reps, frac_yea_dems, 10000)
+perm_replicates = draw_perm_reps(dems, reps, frac_yea_dems, 10000)
 
 # Compute and print p-value: p
 p = np.sum(perm_replicates <= 153/244) / len(perm_replicates)
